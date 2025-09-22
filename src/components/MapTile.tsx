@@ -13,6 +13,8 @@ const getTerrainColor = (terrain: TerrainType): string => {
   switch (terrain) {
     case 'grass':
       return 'bg-terrain-grass';
+    case 'tall_grass':
+      return 'bg-terrain-tall-grass';
     case 'path':
       return 'bg-terrain-path';
     case 'tree':
@@ -21,6 +23,12 @@ const getTerrainColor = (terrain: TerrainType): string => {
       return 'bg-terrain-water';
     case 'building':
       return 'bg-terrain-building';
+    case 'fence':
+      return 'bg-terrain-fence';
+    case 'flower':
+      return 'bg-terrain-flower';
+    case 'sand':
+      return 'bg-terrain-sand';
     default:
       return 'bg-terrain-grass';
   }
@@ -30,6 +38,8 @@ const getTerrainEmoji = (terrain: TerrainType): string => {
   switch (terrain) {
     case 'grass':
       return '🌱';
+    case 'tall_grass':
+      return '🌿';
     case 'path':
       return '🛤️';
     case 'tree':
@@ -38,6 +48,12 @@ const getTerrainEmoji = (terrain: TerrainType): string => {
       return '💧';
     case 'building':
       return '🏠';
+    case 'fence':
+      return '🧱';
+    case 'flower':
+      return '🌸';
+    case 'sand':
+      return '🏖️';
     default:
       return '🌱';
   }
@@ -52,24 +68,26 @@ export const MapTile: React.FC<MapTileProps> = ({
   return (
     <div
       className={cn(
-        "relative w-10 h-10 border-2 border-border transition-none",
+        "relative w-6 h-6 border border-border/40 transition-none",
         getTerrainColor(terrain),
-        hasPlayer && "shadow-glow animate-retro-blink",
+        hasPlayer && "ring-1 ring-accent animate-retro-blink",
         className
       )}
       style={{
-        imageRendering: 'pixelated', // Ensure crisp pixel art
+        imageRendering: 'pixelated',
       }}
     >
       {/* Terrain indicator */}
-      <div className="absolute inset-0 flex items-center justify-center text-sm pointer-events-none">
-        {getTerrainEmoji(terrain)}
+      <div className="absolute inset-0 flex items-center justify-center text-xs pointer-events-none">
+        <span style={{ fontSize: '10px' }}>
+          {getTerrainEmoji(terrain)}
+        </span>
       </div>
 
       {/* Player sprite */}
       {hasPlayer && playerSprite && (
-        <div className="absolute inset-0 flex items-center justify-center z-10 animate-pixel-move">
-          <div className="w-8 h-8 border-2 border-primary bg-primary/20 overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center z-10">
+          <div className="w-5 h-5 border border-accent bg-accent/30 overflow-hidden">
             <img 
               src={playerSprite} 
               alt="Player"

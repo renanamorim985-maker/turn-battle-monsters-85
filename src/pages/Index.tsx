@@ -53,13 +53,13 @@ const Index = () => {
         {/* Header */}
         <div className="text-center mb-8 animate-fade-in">
           <div className="bg-card p-6 border-4 border-primary shadow-battle mb-4">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-2 tracking-wider">
-              ⚔️ RPG ADVENTURE
+            <h1 className="text-3xl md:text-4xl font-bold text-primary mb-2 tracking-wider">
+              ⚔️ MUNDO POKÉMON
             </h1>
-            <p className="text-foreground font-semibold">
+            <p className="text-foreground font-semibold text-sm">
               {gameMode === 'exploration' 
-                ? 'EXPLORE O MUNDO E ENCONTRE MONSTROS SELVAGENS!' 
-                : 'BATALHA ÉPICA POR TURNOS - DERROTE SEU INIMIGO!'
+                ? '🌍 EXPLORE A CIDADE E ENCONTRE POKÉMON SELVAGENS!' 
+                : '⚡ BATALHA POKÉMON - DERROTE SEU OPONENTE!'
               }
             </p>
           </div>

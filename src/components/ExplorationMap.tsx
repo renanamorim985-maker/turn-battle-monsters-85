@@ -66,17 +66,19 @@ export const ExplorationMap: React.FC<ExplorationMapProps> = ({
 
   return (
     <div className={cn("space-y-6", className)}>
-      {/* Map Grid */}
+      {/* Map Grid - Pokémon Style */}
       <div className="flex flex-col items-center">
-        <div className="bg-card p-6 border-4 border-primary shadow-battle">
+        <div className="bg-card p-4 border-4 border-primary shadow-battle">
           {/* Game Boy Screen Effect */}
-          <div className="bg-background p-2 border-2 border-border">
+          <div className="bg-background p-1 border-2 border-border">
             <div 
-              className="grid gap-0 border-4 border-primary"
+              className="grid gap-0 border-2 border-primary"
               style={{ 
                 gridTemplateColumns: `repeat(${gameMap.width}, 1fr)`,
                 gridTemplateRows: `repeat(${gameMap.height}, 1fr)`,
                 imageRendering: 'pixelated',
+                maxWidth: '480px',
+                maxHeight: '480px',
               }}
             >
               {gameMap.tiles.map((row, y) =>
@@ -157,30 +159,45 @@ export const ExplorationMap: React.FC<ExplorationMapProps> = ({
           </div>
         </div>
 
-        {/* Legend */}
-        <div className="bg-card p-3 border-2 border-primary shadow-card">
-          <h4 className="text-sm font-bold text-primary mb-2 text-center">LEGENDA</h4>
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 text-xs font-semibold">
+        {/* Legend - Pokémon Style */}
+        <div className="bg-card p-4 border-2 border-primary shadow-card">
+          <h4 className="text-sm font-bold text-primary mb-3 text-center">🗺️ MAPA DA CIDADE</h4>
+          <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 text-xs font-semibold">
             <div className="flex items-center gap-1">
-              <span className="text-base">🌱</span>
+              <span className="text-sm">🌱</span>
               <span>Grama</span>
             </div>
             <div className="flex items-center gap-1">
-              <span className="text-base">🛤️</span>
-              <span>Caminho</span>
+              <span className="text-sm">🌿</span>
+              <span>Grama Alta</span>
             </div>
             <div className="flex items-center gap-1">
-              <span className="text-base">🌳</span>
+              <span className="text-sm">🛤️</span>
+              <span>Estrada</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="text-sm">🌳</span>
               <span>Árvore</span>
             </div>
             <div className="flex items-center gap-1">
-              <span className="text-base">💧</span>
+              <span className="text-sm">💧</span>
               <span>Água</span>
             </div>
             <div className="flex items-center gap-1">
-              <span className="text-base">🏠</span>
-              <span>Edifício</span>
+              <span className="text-sm">🏠</span>
+              <span>Prédio</span>
             </div>
+            <div className="flex items-center gap-1">
+              <span className="text-sm">🧱</span>
+              <span>Cerca</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="text-sm">🌸</span>
+              <span>Flores</span>
+            </div>
+          </div>
+          <div className="mt-2 text-center text-xs text-muted-foreground">
+            <p>🎯 Grama Alta = Mais Pokémon Selvagens!</p>
           </div>
         </div>
       </div>

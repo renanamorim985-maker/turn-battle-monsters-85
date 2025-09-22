@@ -52,13 +52,17 @@ export default {
         energy: "hsl(var(--energy))",
         damage: "hsl(var(--damage))",
         defense: "hsl(var(--defense))",
-        // Game Boy Terrain Colors
+        // Pokémon Terrain Colors
         terrain: {
           grass: "hsl(var(--terrain-grass))",
+          'tall-grass': "hsl(var(--terrain-tall-grass))",
           path: "hsl(var(--terrain-path))",
           tree: "hsl(var(--terrain-tree))",
           water: "hsl(var(--terrain-water))",
           building: "hsl(var(--terrain-building))",
+          fence: "hsl(var(--terrain-fence))",
+          flower: "hsl(var(--terrain-flower))",
+          sand: "hsl(var(--terrain-sand))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

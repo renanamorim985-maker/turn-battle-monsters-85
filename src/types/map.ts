@@ -1,4 +1,4 @@
-export type TerrainType = 'grass' | 'path' | 'tree' | 'water' | 'building';
+export type TerrainType = 'grass' | 'path' | 'tree' | 'water' | 'building' | 'fence' | 'flower' | 'tall_grass' | 'sand';
 
 export interface Position {
   x: number;
