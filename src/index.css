@@ -8,56 +8,63 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* RPG Theme Colors */
-    --background: 240 10% 8%;
-    --foreground: 240 5% 96%;
+    /* Game Boy Inspired Colors */
+    --background: 86 40% 92%; /* Light cream background */
+    --foreground: 120 25% 15%; /* Dark green text */
 
-    --card: 240 8% 12%;
-    --card-foreground: 240 5% 96%;
+    --card: 86 30% 88%;
+    --card-foreground: 120 25% 15%;
 
-    --popover: 240 8% 12%;
-    --popover-foreground: 240 5% 96%;
+    --popover: 86 30% 88%;
+    --popover-foreground: 120 25% 15%;
 
-    /* Mystical Blue Primary */
-    --primary: 258 90% 66%;
-    --primary-foreground: 240 5% 96%;
+    /* Classic Game Boy Green */
+    --primary: 120 45% 35%;
+    --primary-foreground: 86 40% 92%;
 
-    /* Forest Green for Health */
-    --secondary: 142 76% 36%;
-    --secondary-foreground: 240 5% 96%;
+    /* Darker green for secondary */
+    --secondary: 120 55% 25%;
+    --secondary-foreground: 86 40% 92%;
 
-    --muted: 240 5% 20%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 86 20% 80%;
+    --muted-foreground: 120 15% 40%;
 
-    /* Golden Accent for Energy */
-    --accent: 45 93% 58%;
-    --accent-foreground: 240 10% 8%;
+    /* Yellow-green accent */
+    --accent: 85 65% 55%;
+    --accent-foreground: 120 25% 15%;
 
-    /* Red for Damage */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 240 5% 96%;
+    /* Red for damage/danger */
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 86 40% 92%;
 
-    --border: 240 6% 20%;
-    --input: 240 6% 20%;
-    --ring: 258 90% 66%;
+    --border: 120 25% 60%;
+    --input: 86 25% 85%;
+    --ring: 120 45% 35%;
 
-    /* RPG Specific Colors */
-    --health: 142 76% 36%;
-    --energy: 45 93% 58%;
-    --damage: 0 84% 60%;
-    --defense: 210 100% 56%;
+    /* Game Specific Colors */
+    --health: 142 70% 40%; /* Green for health */
+    --energy: 200 80% 45%; /* Blue for energy */
+    --damage: 0 65% 50%; /* Red for damage */
+    --defense: 240 60% 50%; /* Blue for defense */
     
-    /* Gradients */
-    --gradient-battle: linear-gradient(135deg, hsl(258 90% 16%), hsl(240 10% 8%));
-    --gradient-card: linear-gradient(145deg, hsl(240 8% 14%), hsl(240 8% 10%));
-    --gradient-primary: linear-gradient(135deg, hsl(258 90% 66%), hsl(280 90% 56%));
-    --gradient-health: linear-gradient(90deg, hsl(142 76% 36%), hsl(120 76% 46%));
-    --gradient-energy: linear-gradient(90deg, hsl(45 93% 58%), hsl(35 93% 68%));
+    /* Game Boy Terrain Colors */
+    --terrain-grass: 120 60% 45%; /* Bright green grass */
+    --terrain-path: 45 50% 65%; /* Sandy path */
+    --terrain-tree: 120 80% 25%; /* Dark green trees */
+    --terrain-water: 210 90% 60%; /* Blue water */
+    --terrain-building: 0 0% 50%; /* Gray buildings */
     
-    /* Shadows and Effects */
-    --shadow-battle: 0 20px 40px -10px hsl(240 10% 4% / 0.8);
-    --shadow-card: 0 8px 25px -5px hsl(240 10% 4% / 0.6);
-    --shadow-glow: 0 0 20px hsl(258 90% 66% / 0.3);
+    /* Retro gradients */
+    --gradient-battle: linear-gradient(135deg, hsl(86 40% 92%), hsl(120 25% 85%));
+    --gradient-card: linear-gradient(145deg, hsl(86 30% 88%), hsl(86 25% 85%));
+    --gradient-primary: linear-gradient(135deg, hsl(120 45% 35%), hsl(120 55% 25%));
+    --gradient-health: linear-gradient(90deg, hsl(142 70% 40%), hsl(120 70% 50%));
+    --gradient-energy: linear-gradient(90deg, hsl(200 80% 45%), hsl(220 80% 55%));
+    
+    /* Pixel-art shadows */
+    --shadow-battle: 4px 4px 0px hsl(120 25% 60%);
+    --shadow-card: 2px 2px 0px hsl(120 25% 70%);
+    --shadow-glow: 0 0 8px hsl(120 45% 35%);
     
     --radius: 0.75rem;
 

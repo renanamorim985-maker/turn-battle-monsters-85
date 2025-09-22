@@ -12,17 +12,17 @@ interface MapTileProps {
 const getTerrainColor = (terrain: TerrainType): string => {
   switch (terrain) {
     case 'grass':
-      return 'bg-green-600';
+      return 'bg-terrain-grass';
     case 'path':
-      return 'bg-yellow-700';
+      return 'bg-terrain-path';
     case 'tree':
-      return 'bg-green-800';
+      return 'bg-terrain-tree';
     case 'water':
-      return 'bg-blue-500';
+      return 'bg-terrain-water';
     case 'building':
-      return 'bg-gray-600';
+      return 'bg-terrain-building';
     default:
-      return 'bg-green-600';
+      return 'bg-terrain-grass';
   }
 };
 
@@ -52,25 +52,29 @@ export const MapTile: React.FC<MapTileProps> = ({
   return (
     <div
       className={cn(
-        "relative w-8 h-8 border border-border/20 transition-all duration-200",
+        "relative w-10 h-10 border-2 border-border transition-none",
         getTerrainColor(terrain),
-        hasPlayer && "ring-2 ring-primary ring-opacity-60",
+        hasPlayer && "shadow-glow animate-retro-blink",
         className
       )}
+      style={{
+        imageRendering: 'pixelated', // Ensure crisp pixel art
+      }}
     >
       {/* Terrain indicator */}
-      <div className="absolute inset-0 flex items-center justify-center text-xs opacity-70">
+      <div className="absolute inset-0 flex items-center justify-center text-sm pointer-events-none">
         {getTerrainEmoji(terrain)}
       </div>
 
       {/* Player sprite */}
       {hasPlayer && playerSprite && (
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <div className="w-6 h-6 rounded-full overflow-hidden border border-primary bg-primary/20 animate-pulse-glow">
+        <div className="absolute inset-0 flex items-center justify-center z-10 animate-pixel-move">
+          <div className="w-8 h-8 border-2 border-primary bg-primary/20 overflow-hidden">
             <img 
               src={playerSprite} 
               alt="Player"
               className="w-full h-full object-cover"
+              style={{ imageRendering: 'pixelated' }}
             />
           </div>
         </div>

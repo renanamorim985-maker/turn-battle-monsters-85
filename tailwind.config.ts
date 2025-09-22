@@ -52,6 +52,14 @@ export default {
         energy: "hsl(var(--energy))",
         damage: "hsl(var(--damage))",
         defense: "hsl(var(--defense))",
+        // Game Boy Terrain Colors
+        terrain: {
+          grass: "hsl(var(--terrain-grass))",
+          path: "hsl(var(--terrain-path))",
+          tree: "hsl(var(--terrain-tree))",
+          water: "hsl(var(--terrain-water))",
+          building: "hsl(var(--terrain-building))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -106,6 +114,8 @@ export default {
         "fade-in": "fade-in 0.5s ease-out",
         "bounce-in": "bounce-in 0.6s ease-out",
         "health-pulse": "health-pulse 1s ease-in-out infinite",
+        "pixel-move": "pixel-move 0.2s steps(4, end)",
+        "retro-blink": "retro-blink 1s steps(2, start) infinite",
       },
       keyframes: {
         "pulse-glow": {
@@ -129,6 +139,17 @@ export default {
         "health-pulse": {
           "0%, 100%": { transform: "scale(1)" },
           "50%": { transform: "scale(1.02)" },
+        },
+        "pixel-move": {
+          "0%": { transform: "translate(0, 0)" },
+          "25%": { transform: "translate(0, -2px)" },
+          "50%": { transform: "translate(0, 0)" },
+          "75%": { transform: "translate(0, 1px)" },
+          "100%": { transform: "translate(0, 0)" },
+        },
+        "retro-blink": {
+          "0%, 50%": { opacity: "1" },
+          "51%, 100%": { opacity: "0.3" },
         },
       },
     },

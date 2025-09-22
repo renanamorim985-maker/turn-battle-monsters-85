@@ -48,19 +48,21 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-battle p-4">
+    <div className="min-h-screen bg-gradient-battle p-4" style={{ imageRendering: 'pixelated' }}>
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-8 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
-            ⚔️ RPG Pokémon
-          </h1>
-          <p className="text-muted-foreground">
-            {gameMode === 'exploration' 
-              ? 'Explore o mundo e encontre monstros selvagens!' 
-              : 'Batalha épica por turnos - Derrote seu inimigo!'
-            }
-          </p>
+          <div className="bg-card p-6 border-4 border-primary shadow-battle mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-2 tracking-wider">
+              ⚔️ RPG ADVENTURE
+            </h1>
+            <p className="text-foreground font-semibold">
+              {gameMode === 'exploration' 
+                ? 'EXPLORE O MUNDO E ENCONTRE MONSTROS SELVAGENS!' 
+                : 'BATALHA ÉPICA POR TURNOS - DERROTE SEU INIMIGO!'
+              }
+            </p>
+          </div>
         </div>
 
         {/* Game Mode Switch */}
